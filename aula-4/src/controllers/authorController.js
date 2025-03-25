@@ -1,6 +1,6 @@
 import post from "../models/Post.js";
 
-class PostController {
+class AuthorController {
     static async getAllPosts(req, res) {
         try {
             const listPosts = await post.find({});
@@ -50,4 +50,4 @@ class PostController {
     };
 }
 
-export default PostController;
+export default AuthorController;
