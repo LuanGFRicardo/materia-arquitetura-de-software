@@ -1,16 +1,16 @@
 import author from "../models/Author.js";
 
 class AuthorController {
-    static async getAllPosts(req, res) {
+    static async getAllAuthors(req, res) {
         try {
-            const listPosts = await author.find({});
-            res.status(200).json(listPosts);
+            const listAuthors = await author.find({});
+            res.status(200).json(listAuthors);
         } catch(error) {
             res.status(500).send(error.message);
         }
     };
 
-    static async createPost(req, res) {
+    static async createAuthor(req, res) {
         try {
             const newPost = new author(req.body);
             await newPost.save();
@@ -23,7 +23,7 @@ class AuthorController {
         }
     };
 
-    static async getPostById(req, res) {
+    static async getAuthorById(req, res) {
         try {
             const id = req.params.id;
             const foundPost = await author.findById(id);
@@ -36,7 +36,7 @@ class AuthorController {
         }
     };
 
-    static async deletePostById(req, res) {
+    static async deleteAuthorById(req, res) {
         try {
             const id = req.params.id;
             const deletePost = await author.findById(id);
