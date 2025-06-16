@@ -1,0 +1,70 @@
+---
+
+## 📦 API Express com MongoDB
+
+API RESTful desenvolvida com **Node.js**, **Express** e **MongoDB**, utilizando arquitetura baseada em **Services**, **Repositories**, **DTOs** e **Middleware**. Autenticação via JWT e documentação integrada com Swagger.
+
+---
+
+### 🚀 Como Rodar Localmente
+
+#### ✅ Pré-requisitos
+
+* [Node.js](https://nodejs.org) >= 18.x
+* [MongoDB](https://www.mongodb.com/)
+   
+#### ▶️ Executar o servidor
+
+```bash
+npm start
+```
+
+#### 📚 Acessar documentação Swagger
+
+```
+http://localhost:3000/api-docs
+```
+
+## 📄 Funcionalidades da API
+
+### 🔐 Autenticação
+
+* **POST** `/auth/login`: Login com e-mail e senha (retorna token JWT)
+
+### 👤 Usuários
+
+* **GET** `/users`: Lista todos os usuários
+* **POST** `/users`: Cria novo usuário (com hash de senha)
+* **GET** `/users/:id`: Busca usuário por ID
+* **PUT** `/users/:id`: Atualiza dados do usuário
+* **DELETE** `/users/:id`: Deleta usuário
+* **GET** `/users/search?name=xyz`: Busca usuários por nome
+
+### ✍️ Autores
+
+* **GET** `/authors`: Lista autores
+* **POST** `/authors`: Cria novo autor
+* **GET** `/authors/:id`: Busca autor por ID
+* **PUT** `/authors/:id`: Atualiza autor
+* **DELETE** `/authors/:id`: Remove autor
+* **GET** `/authors/search?name=xyz`: Busca autores por nome
+
+### 📝 Posts
+
+* **GET** `/posts`: Lista posts
+* **POST** `/posts`: Cria pos vinculado a autor
+* **GET** `/posts/:id`: Detalha post
+* **PUT** `/posts/:id`: Atualiza dados
+* **DELETE** `/posts/:id`: Remove post
+* **GET** `/posts/search?keyword=xyz`: Busca por título ou descrição
+
+---
+
+## 📘 Documentação com Swagger
+
+Documentação gerada com Swagger e disponível em tempo de execução:
+
+```
+📎 Arquivo: src/config/swagger.js
+🔗 Acesse: http://localhost:3000/api-docs
+```
